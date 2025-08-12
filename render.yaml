@@ -2,31 +2,31 @@
 services:
   - type: web
     name: unzip-bot
-    env: docker
+    runtime: docker            # use 'runtime', not the deprecated 'env'
     plan: free
-    region: oregon          # or "frankfurt"
-    branch: main            # change if you deploy another branch
+    region: oregon             # or frankfurt/ohio/virginia/singapore
+    branch: main
     dockerfilePath: ./Dockerfile
-    healthCheckPath: /      # our start.sh runs a tiny server on $PORT
-    autoDeploy: true
+    healthCheckPath: /         # start.sh serves on $PORT
+    autoDeployTrigger: commit  # replaces deprecated 'autoDeploy'
+
     envVars:
-      # Create these as Render "Secrets" (Dashboard → Secrets) or put values inline.
+      # Render will prompt you ONCE at creation time for each with sync:false
       - key: API_ID
-        fromSecret: API_ID
+        sync: false
       - key: API_HASH
-        fromSecret: API_HASH
+        sync: false
       - key: BOT_TOKEN
-        fromSecret: BOT_TOKEN
+        sync: false
       - key: BOT_OWNER
-        fromSecret: BOT_OWNER
+        sync: false
       - key: LOGS_CHANNEL
-        fromSecret: LOGS_CHANNEL
+        sync: false
       - key: MONGODB_URL
-        fromSecret: MONGODB_URL
+        sync: false
       - key: MONGODB_DBNAME
         value: Unzipper_Bot
       - key: RPC_SECRET
-        fromSecret: RPC_SECRET
-      # Optional
+        sync: false
       - key: GOFILE_WEBSITE_TOKEN
-        fromSecret: GOFILE_WEBSITE_TOKEN
+        sync: false
