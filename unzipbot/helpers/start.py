@@ -8,8 +8,11 @@ import aiohttp
 import aiofiles
 import aiocron
 from pyrogram import enums
-from pyrogram.errors import FloodPremiumWait, FloodWait
-
+from pyrogram.errors import FloodWait
+try:
+    from pyrogram.errors import FloodPremiumWait  # type: ignore
+except Exception:
+    FloodPremiumWait = FloodWait
 from config import Config
 from unzipbot import LOGGER, boottime, unzipbot_client
 from unzipbot.i18n.messages import Messages

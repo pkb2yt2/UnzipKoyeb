@@ -23,7 +23,11 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 import git
 import psutil
 from pyrogram import enums, filters
-from pyrogram.errors import FloodPremiumWait, FloodWait, RPCError
+from pyrogram.errors import FloodWait, RPCError
+try:
+    from pyrogram.errors import FloodPremiumWait  # type: ignore
+except Exception:
+    FloodPremiumWait = FloodWait  # type: ignore
 from pyrogram.types import Message
 
 from config import Config

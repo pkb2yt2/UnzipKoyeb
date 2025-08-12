@@ -7,12 +7,12 @@ from datetime import timedelta
 from shlex import quote
 from time import time
 
-from pyrogram.errors import (
-    FloodPremiumWait,
-    FloodWait,
-    PhotoExtInvalid,
-    PhotoSaveFileInvalid,
-)
+from pyrogram.errors import FloodWait, PhotoExtInvalid, PhotoSaveFileInvalid
+try:
+    from pyrogram.errors import FloodPremiumWait  # type: ignore
+except Exception:
+    FloodPremiumWait = FloodWait  # type: ignore
+
 
 from config import Config
 from unzipbot import LOGGER, unzipbot_client

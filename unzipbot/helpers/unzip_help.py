@@ -4,7 +4,11 @@ from asyncio import sleep
 
 import psutil
 from pyrogram import enums
-from pyrogram.errors import FloodPremiumWait, FloodWait
+from pyrogram.errors import FloodWait
+try:
+    from pyrogram.errors import FloodPremiumWait  # type: ignore
+except Exception:
+    FloodPremiumWait = FloodWait  # type: ignore
 
 from config import Config
 from unzipbot.helpers.database import del_cancel_task, get_cancel_task, get_lang

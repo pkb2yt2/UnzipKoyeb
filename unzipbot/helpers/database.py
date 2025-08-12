@@ -3,7 +3,13 @@ from datetime import datetime
 
 import base58check
 from motor.motor_asyncio import AsyncIOMotorClient
-from pyrogram.errors import FloodPremiumWait, FloodWait
+
+from pyrogram.errors import FloodWait
+try:
+    from pyrogram.errors import FloodPremiumWait  # type: ignore
+except Exception:
+    FloodPremiumWait = FloodWait  # type: ignore
+
 
 from config import Config
 from unzipbot import unzipbot_client
