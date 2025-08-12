@@ -21,8 +21,8 @@ fi
 echo "▶️  Starting aria2c (RPC on, secret set)"
 aria2c \
   --enable-rpc \
-  --rpc-listen-all=true \
-  --rpc-allow-origin-all \
+  --rpc-listen-all=false \
+  --rpc-listen-port=${ARIA2_PORT:-6800} \
   --rpc-secret="${RPC_SECRET}" \
   --max-connection-per-server=16 \
   --split=16 \
