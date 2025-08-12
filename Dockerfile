@@ -7,19 +7,17 @@ WORKDIR /app
 COPY requirements.txt /app/requirements.txt
 
 # Install runtime deps + temporary build toolchain for tgcrypto,
-# then pip install, then remove the build toolchain.
-# Add non-free to get 'unrar' (RAR5-capable)
+# add 'unrar' for RAR5 and 'git' for GitPython.
 RUN set -eux; \
     echo "deb http://deb.debian.org/debian bookworm main non-free" > /etc/apt/sources.list; \
     echo "deb http://security.debian.org/debian-security bookworm-security main non-free" >> /etc/apt/sources.list; \
     echo "deb http://deb.debian.org/debian bookworm-updates main non-free" >> /etc/apt/sources.list; \
     apt-get update && apt-get install -y --no-install-recommends \
-      aria2 p7zip-full unrar zstd tar ffmpeg ca-certificates build-essential \
+      aria2 p7zip-full unrar zstd tar ffmpeg ca-certificates git build-essential \
     && pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -r /app/requirements.txt \
     && apt-get purge -y --auto-remove build-essential \
     && rm -rf /var/lib/apt/lists/*
-
 
 # Bring the app
 COPY . /app
