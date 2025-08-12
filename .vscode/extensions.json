@@ -1,0 +1,23 @@
+{
+  "recommendations": [
+    "atishay-jain.all-autocomplete",
+    "aaron-bond.better-comments",
+    "britesnow.vscode-toggle-quotes",
+    "charliermarsh.ruff",
+    "foxundermoon.shell-format",
+    "ibm.output-colorizer",
+    "meezilla.json",
+    "mikestead.dotenv",
+    "ms-azuretools.vscode-docker",
+    "ms-python.debugpy",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ninoseki.vscode-mogami",
+    "nhoizey.gremlins",
+    "oliversturm.fix-json",
+    "tamasfe.even-better-toml",
+    "timonwong.shellcheck",
+    "visualstudioexptteam.vscodeintellicode",
+    "yzhang.markdown-all-in-one",
+  ]
+}

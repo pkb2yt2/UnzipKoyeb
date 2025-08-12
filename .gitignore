@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+.ruff_cache
+
+# SonarQube
+.scannerwork/
+
+# Secrets
+*.session
+*.session-journal
+
+# Internal directories and files
+downloads/
+Downloaded/
+Thumbnails/
+unknown_errors.txt
+unzip-bot.log

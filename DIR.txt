@@ -1,0 +1,28 @@
+unzipbot/
+  __init__.py                # Builds the Pyrogram Client (plugins root = unzipbot/modules), sets logging
+  __main__.py                # Startup/shutdown orchestration, signal handlers, cron starters, idle loop
+
+  helpers/
+    aria2_helper.py          # aria2p client (RPC :6800), add_download(), filename sniffing
+    combo_helper.py          # Parse creds from logs, build combo *.zip/*.txt bundles
+    cookie_helper.py         # Extract browser cookies from log dirs into an archive
+    database.py              # Motor/Mongo layer: users, approvals/bans, tasks, modes, VIP, referrals, CC dump
+    downloader.py            # Monitors aria2 downloads, progress edits, cleanup
+    gofile_helper.py         # Resolve gofile.io links (guest token → direct link + Cookie header)
+    progress_helper.py       # get_system_stats(), progress message rendering
+    start.py                 # Boot/cron tasks (check_logs, set_boot_time, remove_expired_tasks, etc.)
+    unzip_help.py            # humanbytes/timeformat, progress_for_pyrogram, RAM limits, misc utils
+
+  i18n/
+    messages.py              # Language loader (JSON), Messages.get(...)
+    buttons.py               # Inline keyboards (home menu, sub-menus, actions)
+    lang/en.json             # English strings (commands, errors, progress, etc.)
+
+  modules/
+    commands.py              # ~1.3k LOC of command handlers
+    callbacks.py             # ~1.7k LOC of callback flows (button-driven UX)
+    ext_script/
+      ext_helper.py          # Run shell cmds, extract/merge (7z/tar), list files, keyboards
+      up_helper.py           # Upload/forward/send URLs, split files, captions, thumb handling
+      metadata_helper.py     # Media metadata (mutagen) + ffmpeg conversions
+      cc_finder.py           # Crawl logs for “CreditCards” folders; dedupe/store; export report

@@ -1,0 +1,23 @@
+# Core telegram client
+pyrogram>=2.0
+tgcrypto>=1.2
+
+# Async utils
+aiohttp>=3.9
+aiofiles>=23.2
+aiocron>=1.8
+
+# Downloads / aria2 control
+aria2p>=0.12
+
+# DB
+motor[srv]>=3.4
+
+# Misc
+requests>=2.31
+psutil>=5.9
+mutagen>=1.47
+base58check>=1.0
+GitPython>=3.1
+pykeyboard>=0.1.5
+unzip-http>=0.6

@@ -1,0 +1,26 @@
+[33m0f687cb[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m change in extract_archive piece
+[33mdef150f[m NoneType error
+[33m6cb544a[m call back error resolution
+[33md0aed61[m Get CC addition4
+[33m71d9071[m Get CC addition3
+[33m963d5ab[m Get CC addition2
+[33m95f9bf4[m Get CC addition2
+[33m654dc43[m Get CC addition
+[33med8c153[m await error
+[33maf29778[m time.time() error
+[33m201db44[m time lib error
+[33mbafa9a8[m Cliensession error in url handeling with old aiohttp2
+[33m9d40da8[m Cliensession error in url handeling with old aiohttp
+[33m21a16ee[m small error in commenting old code
+[33m238f2dc[m Changes in url download methods
+[33m29d9676[m Integrated env vars in config.py instead of using heroku
+[33mf5408e9[m Made unrar executabe
+[33m404e99b[m Fix: use apk instead of apt-get for git on Alpine
+[33m53cdcd0[m remvoed env
+[33md9e9468[m Initial commit for Heroku bot deploy
+[33mb640a4d[m Install git for full support
+[33ma02a347[m Initial bot ready for heroku deploy
+[33m6a42c70[m retry1
+[33mf681a7d[m Merge pull request #5 from Tmplinkz/dependabot/pip/aiohttp-3.12.9
+[33m3a84a89[m [dependabot/pip] (deps): Bump aiohttp from 3.11.18 to 3.12.9
+[33m9a04652[m Initial commit: unzip-bot v7
