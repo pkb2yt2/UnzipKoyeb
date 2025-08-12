@@ -1,0 +1,32 @@
+# render.yaml
+services:
+  - type: web
+    name: unzip-bot
+    env: docker
+    plan: free
+    region: oregon          # or "frankfurt"
+    branch: main            # change if you deploy another branch
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /      # our start.sh runs a tiny server on $PORT
+    autoDeploy: true
+    envVars:
+      # Create these as Render "Secrets" (Dashboard → Secrets) or put values inline.
+      - key: API_ID
+        fromSecret: API_ID
+      - key: API_HASH
+        fromSecret: API_HASH
+      - key: BOT_TOKEN
+        fromSecret: BOT_TOKEN
+      - key: BOT_OWNER
+        fromSecret: BOT_OWNER
+      - key: LOGS_CHANNEL
+        fromSecret: LOGS_CHANNEL
+      - key: MONGODB_URL
+        fromSecret: MONGODB_URL
+      - key: MONGODB_DBNAME
+        value: Unzipper_Bot
+      - key: RPC_SECRET
+        fromSecret: RPC_SECRET
+      # Optional
+      - key: GOFILE_WEBSITE_TOKEN
+        fromSecret: GOFILE_WEBSITE_TOKEN
