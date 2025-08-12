@@ -37,11 +37,10 @@ aria2c \
 # ---------------------------------------------------------
 # Tiny HTTP server for Koyeb health checks (Web Service)
 # ---------------------------------------------------------
-if [[ -n "${PORT:-}" ]]; then
-  echo "🌐 Health server on :${PORT}"
-  python3 -m http.server "${PORT}" >/dev/null 2>&1 &
+if [ -n "${PORT:-}" ]; then
+  python3 -m http.server "$PORT" >/dev/null 2>&1 &
+  echo "Healthcheck server on :$PORT"
 fi
-
 # ---------------------------------------------------------
 # Run the bot
 # ---------------------------------------------------------
